@@ -14,17 +14,22 @@ while 1%不停迭代
     C_new = C;%更新codebook
     for k=1:L%每个聚类群
         oneclass=img(index(:,1)==k);%聚类
-        C_new(k) = mean(oneclass);
+        if isempty(oneclass)
+            C_new(k)=0;
+        else
+            C_new(k) = mean(oneclass);
+        end
+        
     end
-    
+    C_new=round(C_new);
     if C_new==C
         break;
     end
     
     C=C_new;
-    disp(C);
+    %disp(C);
 end
-
+disp(C);
 
 function  output  = euclidean_distance(data, center)
 data_num =length(data);
@@ -32,7 +37,7 @@ center_num = length(center);
 output = zeros(data_num, center_num);
     for i = 1:center_num
         difference = double(data) - repmat(center(i),1,data_num);    %求样本集与第i个聚类中心的差；
-        sum_of_squares = sum(difference .* difference, 2);        %求平方， 并对每一行求和；
+        sum_of_squares = abs(difference);        %求平方， 并对每一行求和；
         output(:, i) = sum_of_squares;             
     end
 end
