@@ -1,7 +1,7 @@
 %实现单符号霍夫曼编码
 clear;
 clc;
-I=imread('untitle.bmp');
+I=imread('newimg.bmp');
 I=double(I);
 %I=im2double(I);
   tbl=tabulate(I(:));%统计各个符号的频次
