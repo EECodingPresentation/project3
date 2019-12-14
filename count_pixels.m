@@ -61,6 +61,11 @@ fclose(fid);
 a=zeros(length(value),1);
 a(1)=1;
 al=(code(:,1)+a).'*sdata(:,1)%平均编码长度
-
+p=sdata0(:,1);
+H=0;
+for i=1:length(p)
+    H=H+p(i)*log2(p(i));
+end
+H=-H
     
 

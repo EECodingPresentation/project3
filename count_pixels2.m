@@ -50,7 +50,7 @@ end
 fid=fopen(['A.txt'],'w');
 for i=1:length(value)
     fprintf(fid,'%d ',floor(value(i)));
-    fprintf(fid,'%d ',ceil(1000*(value(i)-floor(value(i)))));
+    fprintf(fid,'%d ',round(1000*(value(i)-floor(value(i)))));
     for j=1:code(i,1)
 fprintf(fid,'%d',code(i,code(i,1)-j+2));  
     end
@@ -65,6 +65,11 @@ fprintf(fid,'%d',code(1,code(1,1)-j+2));
  fprintf(fid,'0');
 fclose(fid);
 al=code(:,1).'*sdata(:,1)
-
+p=sdata0(:,1);
+H=0;
+for i=1:length(p)
+    H=H+p(i)*log2(p(i));
+end
+H=-H
     
 
