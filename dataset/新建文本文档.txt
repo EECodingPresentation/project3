@@ -1,0 +1,6 @@
+1-4    Full 均匀
+4-8    8*8 均匀
+9-12  Full H261
+13-16 8*8 H261
+17-20 Full Lloyd-Max
+21-24 8*8 Lloyd-Max

@@ -1,7 +1,7 @@
 %实现单符号霍夫曼编码
 clear;
 clc;
-I=imread('newimg.bmp');
+I=imread('..\Coding\untitle.bmp');
 I=double(I);
 %I=im2double(I);
   tbl=tabulate(I(:));%统计各个符号的频次
@@ -42,7 +42,7 @@ while length(huff(:,1))>1%循环合并
      huff=sortrows( huff,2);%重新排序
 end
     %%
-fid=fopen(['A.txt'],'w');%将编码结果写入txt中
+fid=fopen(['..\Coding\A.txt'],'w');%将编码结果写入txt中
 for i=1:length(value)
     fprintf(fid,'%d ',value(i));
     for j=1:code(i,1)
@@ -61,6 +61,11 @@ fclose(fid);
 a=zeros(length(value),1);
 a(1)=1;
 al=(code(:,1)+a).'*sdata(:,1)%平均编码长度
-
+p=sdata0(:,1);
+H=0;
+for i=1:length(p)
+    H=H+p(i)*log2(p(i));
+end
+H=-H
     
 

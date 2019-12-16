@@ -1,2 +1,22 @@
-# project3
-project3 for coding presentation
+### 文件清单
+|文件/文件夹|类别|作用|
+|--|--|--|
+|/dataset|数据集|得到的数据|
+|/dataset_0.2|数据集|得到的数据|
+|/dataset_0.35|数据集|得到的数据|
+|calculateProbability|通信系统|判决，实验未使用|
+|channel.m|通信系统|信道|
+|channel2.m|通信系统|信道|
+|channel3.m|通信系统|信道|
+|count_pixels.m|熵编码|单符号Huffman编码|
+|count_pixels2.m|熵编码|双符号Huffman编码|
+|hard_judge.m|通信系统|硬判决|
+|hard_viterbi.m|通信系统|veterbi译码|
+|Kmeans.m|量化|K-means非均匀量化器|
+|Lloyd_Max.m|量化|Lloyd-Max非均匀量化器|
+|main.m|通信系统|通信系统主程序，用于信源信道联调|
+|model_conv.m|通信系统|卷积编码|
+|model_map.m|通信系统|电平映射|
+|soft_judge.m|通信系统|软判决，本次实验未使用|
+|soft_viterbi.m|通信系统|veterbi译码，本次实验未使用|
+|test.m|通信系统|联调|
