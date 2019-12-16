@@ -1,7 +1,7 @@
 %ÊµÏÖË«·ûºÅ»ô·òÂü±àÂë
 clear;
 clc;
-I0=imread('untitle.bmp');
+I0=imread('..\Coding\untitle.bmp');
 I0=double(I0);
 I=zeros(128,64);
 for i=1:64
@@ -47,7 +47,7 @@ while length(huff(:,1))>1
      huff=sortrows( huff,2);
 end
     %%
-fid=fopen(['A.txt'],'w');
+fid=fopen(['..\Coding\A.txt'],'w');
 for i=1:length(value)
     fprintf(fid,'%d ',floor(value(i)));
     fprintf(fid,'%d ',round(1000*(value(i)-floor(value(i)))));
