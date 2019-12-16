@@ -2,11 +2,11 @@ function decode_bit = main(data)
     %% 参数设定
     ifconv=1;%是否进行卷积编码
     datalen=length(data);%随机生成01序列的长度
-    eff=3;%卷积编码效率，取值{2,3},2代表1/2编码，3代表1/3编码
+    eff=2;%卷积编码效率，取值{2,3},2代表1/2编码，3代表1/3编码
     tail=1;%卷积编码发端是否收尾，取值{0,1}，0代表不收尾，1代表收尾
     bitmode=1;%电平映射模式，取值{1,2,3}，1代表1bit/符号，2代表2bit/符号，3代表3bit/符号
-    sigma=0; %即σ
-    hard = 1; %软硬解码
+    sigma=0.35; %即σ
+    hard = 0; %软硬解码
     holegap = 0; %打孔间隔
 
     %% 连接所有的模块，构成整个通信系统
@@ -19,7 +19,7 @@ function decode_bit = main(data)
      end
 
     mapres=model_map(convres,bitmode);  %电平映射
-    channelres=channel2(mapres,sigma);  %信道传输
+    [channelres, tmp]=channel3(mapres,sigma);  %信道传输
 
     hard_bitcode = hard_judge(channelres, bitmode, eff);
 

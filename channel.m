@@ -20,7 +20,8 @@ for i = 1: num
     tmp = importdata(['.\dataset\', num2str(i), '\single_data.txt']);
     psnr(i) = mean(tmp(: , 2));
     
-    fid = fopen(['.\dataset\', num2str(i), '\channel.txt'], 'w');
+    fid = fopen(['.\dataset\', num2str(i), ...
+        '\channel_conv1_eff2_bit2_sigma0.3.txt'], 'w');
     for index = 1: length(data)
         fprintf(fid, '%d', data(index));
     end
