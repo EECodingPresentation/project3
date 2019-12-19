@@ -1,8 +1,4 @@
-%ÊµÏÖË«·ûºÅ»ô·òÂü±àÂë
-clear;
-clc;
-% I0=imread('..\Coding\untitle.bmp');
-I0=imread('newimg.bmp');
+function al=bitrate(I0)
 I0=double(I0);
 I=zeros(128,64);
 for i=1:64
@@ -65,12 +61,12 @@ fprintf(fid,'%d',code(1,code(1,1)-j+2));
  end
  fprintf(fid,'0');
 fclose(fid);
-al=code(:,1).'*sdata(:,1)
+al=code(:,1).'*sdata(:,1);
 p=sdata0(:,1);
 H=0;
 for i=1:length(p)
     H=H+p(i)*log2(p(i));
 end
-H=-H
-    
+H=-H;
+end
 
